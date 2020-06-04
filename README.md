@@ -28,14 +28,14 @@ redis_config.yaml
 ## Unit Tests
 To check Redis server connection run:
 ```
-$(env) python tests.py
+$(env) python funbox_task/tests.py
 ```
 If one of the tests fails, check the yaml file and your Redis Server configuration.
 
 ## Start
 To start App run:
 ```
-$(env) uvicorn main:api --reload
+$(env) funbox_task/ uvicorn main:api --reload
 ```
 ## Api Docs
 To check API Docs visit:
