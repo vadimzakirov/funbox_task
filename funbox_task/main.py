@@ -12,6 +12,10 @@ store = MainStorage(config)
 
 @api.post('/visited_links/')
 def upload_links(link_request: models.UploadLinks):
+    """
+    :param link_request: Pydantic JSON model
+    :return: success/error responce_types.Response
+    """
     request_time = int(time.time())
     try:
         store.store_domains(link_request.extract_domains(), request_time)
@@ -22,6 +26,11 @@ def upload_links(link_request: models.UploadLinks):
 
 @api.get('/visited_links/')
 def get_links(to: str, q: str = Query(None, alias="from")):
+    """
+    :param to: time filter parameter - timestamp
+    :param from (q): time filter parameter - timestamp
+    :return: list of domains responce_types.Response
+    """
     try:
         filtered_domains = store.filter_domains_by_time(time_from=q, time_to=to)
         return Response(details={'domains': filtered_domains}).json()
