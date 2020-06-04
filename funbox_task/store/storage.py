@@ -4,6 +4,9 @@ from redis_conn import RedisConn
 
 
 class MainStorage(LinkStore):
+    """
+    Storage Mixin
+    """
     r: Redis
 
     def __init__(self, config):

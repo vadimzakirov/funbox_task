@@ -13,6 +13,11 @@ class UploadLinks(BaseModel):
 
     @staticmethod
     def append_http(list_of_urls):
+        """
+        Append "http://" to make urlparse
+        :param list_of_urls: List
+        :return: List of valid links
+        """
         http_url_list = []
         for url in list_of_urls:
             if url[:7] != 'http://' and url[:8] != 'https://':
@@ -21,17 +26,3 @@ class UploadLinks(BaseModel):
                 http_url_list.append(url)
         return http_url_list
 
-
-class GetLinks(BaseModel):
-    """
-    Represent /visited_links GET query params
-    """
-    class Config:
-        fields = {
-            'from_': 'from'
-        }
-
-    def dict(self, *args, **kwargs):
-        d = super().dict(*args, **kwargs)
-        d['from'] = d.pop('from_')
-        return d
