@@ -1,7 +1,7 @@
 # FunBox test task
 ## Install packages into env
 This task is implemented in Python 3.7 using the FastAPI framework.
-To start clone this repo in working directory and make virtual environment and activate it.
+To start clone this repo in working directory, make virtual environment and activate it.
 ```
 $ python3.7 -m venv env
 $ source env/bin/activate
