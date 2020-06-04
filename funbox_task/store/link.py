@@ -11,7 +11,6 @@ class LinkStore(BaseStore):
 
     def filter_domains_by_time(self, time_from, time_to):
         uuid_domains = self.r.zrangebyscore(self.set_name, time_from, time_to)
-        print(uuid_domains)
         return self.delete_repeats([domain.decode("utf-8").split(':')[-1] for domain in uuid_domains])
 
     @staticmethod

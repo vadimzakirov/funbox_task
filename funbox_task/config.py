@@ -9,7 +9,6 @@ class RedisConfig(object):
     def _load_config(self):
         with open(self._config_path) as f:
             yaml_config = yaml.safe_load(f)
-            print(yaml_config)
             return yaml_config
 
     def get_config(self):
