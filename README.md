@@ -6,7 +6,7 @@ To start clone this repo in working directory, make virtual environment and acti
 $ python3.7 -m venv env
 $ source env/bin/activate
 ```
-Next, you need to install all the dependent packages.
+Next, you need to install all dependent packages.
 ```
 $(env) pip install -r requirements.txt
 ```
